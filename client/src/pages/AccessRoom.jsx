@@ -289,7 +289,7 @@ const AccessRoom = () => {
       {showResult && actualResult && (
         <div className="actual-result">
           <h3>Actual Result:</h3>
-          <p>{actualResult === "boy" ? "👦 IT'S A BOY!" : "👧 IT'S A GIRL!"}</p>
+          <h1>{actualResult === "boy" ? "👦 IT'S A BOY!" : "👧 IT'S A GIRL!"}</h1>
         </div>
       )}
 
