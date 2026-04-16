@@ -1,13 +1,10 @@
 /* =========================================================
-   GLOBAL RESET (removes default browser spacing issues)
+   GLOBAL RESET
 ========================================================= */
 * {
   margin: 0;
-  /* remove default spacing around elements */
   padding: 0;
-  /* remove default inner spacing */
   box-sizing: border-box;
-  /* ensures padding doesn't break layout width */
 }
 
 /* =========================================================
@@ -15,355 +12,297 @@
 ========================================================= */
 body {
   font-family: "Quicksand", sans-serif;
-  /* clean modern font */
   background: #fdf6f9;
-  /* light pink background for soft UI */
   line-height: 1.5;
-  /* improves text readability */
 }
 
 /* =========================================================
-   HEADER SECTION (top banner)
+   HEADER
 ========================================================= */
 .header {
   background: linear-gradient(135deg, #ffb6c1, #add8e6);
-  /* pink → blue gradient */
   padding: 60px 20px;
-  /* space inside header (top/bottom + left/right) */
   text-align: center;
-  /* center all text inside */
   color: white;
-  /* white text for contrast */
 }
 
-/* Main header title */
 .header h1 {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  /* responsive font size:
-     - min: 1.8rem
-     - scales with screen width (4vw)
-     - max: 3rem */
   font-weight: 600;
-  /* semi-bold text */
 }
 
-/* Header subtitle */
 .header p {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  /* responsive subtitle text size */
 }
 
 /* =========================================================
-   PAGE TITLE SECTION
+   PAGE TITLE
 ========================================================= */
 .page-title {
   text-align: center;
-  /* center title text */
   margin: 30px 0;
-  /* space above and below title */
 }
 
 /* =========================================================
-   ROOM CARD (each room box)
+   ROOM CARD
 ========================================================= */
 .room-card {
   background: white;
-  /* white card background */
   border-radius: 20px;
-  /* rounded corners */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  /* soft shadow */
   text-align: center;
-  /* center content inside card */
   padding: 20px;
-  /* inner spacing */
   transition: transform 0.2s ease;
-  /* smooth hover animation */
   width: 100%;
-  /* full width of grid column */
 }
 
-/* hover effect for card */
 .room-card:hover {
   transform: scale(1.02);
-  /* slightly enlarge on hover */
 }
 
-/* room title inside card */
 .room-title {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  /* responsive text */
   font-weight: 600;
-  /* bold-ish */
 }
 
-/* room code styling */
 .room-code {
   color: #ff69b4;
-  /* pink highlight */
   font-weight: 600;
 }
 
 /* =========================================================
-   STATUS COLORS (open / closed room)
+   STATUS & RESULT COLORS
 ========================================================= */
 .status-open {
   color: #28a745;
-  /* green = open */
 }
 
 .status-closed {
   color: #dc3545;
-  /* red = closed */
 }
 
-/* =========================================================
-   RESULT COLORS (boy/girl)
-========================================================= */
 .result-boy {
   color: #4da6ff;
-  /* blue */
   font-weight: 600;
 }
 
 .result-girl {
   color: #ff69b4;
-  /* pink */
   font-weight: 600;
 }
 
 /* =========================================================
-   CONTAINERS (forms/pages wrapper)
+   CONTAINERS
 ========================================================= */
 .create-room-container,
 .access-room-container {
   width: 100%;
-  /* full width */
   max-width: 600px;
-  /* limit width for readability */
   margin: 60px auto;
-  /* center horizontally + top spacing */
   padding: 20px;
-  /* inner spacing */
   background: white;
-  /* white card style */
   border-radius: 20px;
-  /* rounded corners */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  /* soft shadow */
+}
+
+/* =========================================================
+   ACCESS ROOM WRAPPER (FULL CENTER)
+========================================================= */
+.access-room-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd6e0, #cde7ff);
+  padding: 20px;
 }
 
 /* =========================================================
    FORM INPUTS
 ========================================================= */
-.create-room-form input,
+.vote-form,
+.create-room-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .vote-form input,
-.vote-form select {
+.vote-form select,
+.create-room-form input {
   width: 100%;
-  /* full width input */
   padding: 10px;
-  /* inner spacing */
   border-radius: 10px;
-  /* rounded corners */
   border: 1px solid #ccc;
-  /* light border */
-  font-size: 1rem;
-  /* readable text */
 }
 
 /* =========================================================
-   BUTTONS (general style)
+   BUTTONS
 ========================================================= */
 .create-room-btn,
 .reveal-btn,
 .view-result-btn,
 .vote-form button {
   width: 100%;
-  /* full width button */
   padding: 10px;
-  /* inner spacing */
   border-radius: 12px;
-  /* rounded corners */
   border: none;
-  /* remove default border */
   font-weight: 600;
-  /* bold text */
   cursor: pointer;
-  /* pointer on hover */
   color: white;
-  /* white text */
   background: linear-gradient(135deg, #ffb6c1, #add8e6);
-  /* gradient button */
   transition: 0.3s ease;
-  /* smooth hover animation */
 }
 
-/* button hover effect */
 .create-room-btn:hover,
 .reveal-btn:hover,
 .view-result-btn:hover {
   transform: scale(1.03);
-  /* slightly enlarge */
   opacity: 0.9;
-  /* slight fade */
 }
 
 /* =========================================================
-   VOTE LAYOUT (boy vs girl columns)
+   VOTE SECTION
 ========================================================= */
 .votes-container {
   display: flex;
-  /* side-by-side layout */
   gap: 20px;
-  /* space between columns */
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
-/* =========================================================
-   VOTE COLUMN (each side)
-========================================================= */
 .vote-column {
   flex: 1;
-  /* equal width columns */
   padding: 15px;
-  /* inner spacing */
   border-radius: 12px;
-  /* rounded corners */
   position: relative;
-  /* needed for background overlay */
   overflow: hidden;
-  /* prevents overflow */
 }
 
-/* background overlay effect */
+/* background overlay */
 .vote-column::before {
   content: "";
-  /* required for pseudo element */
   position: absolute;
-  /* overlay positioning */
   inset: 0;
-  /* top/left/right/bottom = 0 */
   background-size: cover;
-  /* fill background */
   background-position: center;
-  /* center image */
   opacity: 0.4;
-  /* transparency */
   z-index: 0;
-  /* behind content */
 }
 
-/* boy background image */
 .boy-column::before {
   background-image: url("https://images.unsplash.com/photo-1558788353-f76d92427f16");
 }
 
-/* girl background image */
 .girl-column::before {
   background-image: url("https://images.pexels.com/photos/4587996/pexels-photo-4587996.jpeg");
 }
 
-/* ensure content stays above background */
 .vote-card,
 .vote-column h3 {
   position: relative;
   z-index: 1;
 }
 
-/* =========================================================
-   VOTE CARD (each vote box)
-========================================================= */
 .vote-card {
   background: rgba(255, 255, 255, 0.9);
-  /* semi-transparent white */
   margin-bottom: 10px;
-  /* spacing between cards */
   padding: 10px;
-  /* inner spacing */
   border-radius: 10px;
-  /* rounded corners */
 }
 
 /* =========================================================
-   VOTE FORM LAYOUT
+   PROGRESS BAR
 ========================================================= */
-.vote-form {
-  display: flex;
-  /* flex layout */
-  flex-direction: column;
-  /* stack inputs vertically */
-  gap: 10px;
-  /* spacing between inputs */
-  margin-top: 20px;
+.vote-bar-container {
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bar {
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.boy-bar {
+  background: #4dabf7;
+}
+
+.girl-bar {
+  background: #ff6b9a;
 }
 
 /* =========================================================
-   FULL SCREEN CENTER WRAPPER
+   REVEAL SECTION
 ========================================================= */
-.access-room-wrapper {
-  display: flex;
-  /* flex layout */
-  justify-content: center;
-  /* center horizontally */
-  align-items: center;
-  /* center vertically */
-  min-height: 100vh;
-  /* full screen height */
-  background: linear-gradient(135deg, #ffd6e0, #cde7ff);
-  /* soft gradient */
-  padding: 20px;
-  /* spacing on small screens */
+.reveal-section {
+  margin: 20px 0;
+}
+
+.reveal-btn {
+  border-radius: 20px;
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN - PHONES
+   COUNTDOWN + RESULT
 ========================================================= */
-@media (max-width: 600px) {
-  .votes-container {
-    flex-direction: column;
-    /* stack columns vertically */
+.countdown {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.result-animation {
+  font-size: 2rem;
+  margin-top: 15px;
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
   }
 
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 900px) {
+  .votes-container {
+    flex-direction: column;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
   .room-card {
     padding: 15px;
-    /* smaller padding */
   }
 
   .create-room-container,
   .access-room-container {
     margin: 30px 10px;
-    /* reduce spacing */
     padding: 15px;
-    /* smaller padding */
   }
 
   .header {
     padding: 40px 15px;
-    /* smaller header spacing */
   }
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN - TABLETS
-========================================================= */
-@media (max-width: 900px) {
-  .votes-container {
-    flex-direction: column;
-    /* stack columns */
-  }
-
-  .header h1 {
-    font-size: 2.2rem;
-    /* smaller title for tablets */
-  }
-}
-
-/* =========================================================
-   GLOBAL SAFETY FIX (prevents overflow issues)
+   SAFETY FIX
 ========================================================= */
 button,
 input,
 select {
   max-width: 100%;
-  /* never exceed container width */
 }
