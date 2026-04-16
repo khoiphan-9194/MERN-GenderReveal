@@ -23,7 +23,6 @@ const AppNavbar = () => {
             🏠
           </Navbar.Brand>
 
-    
           <Navbar.Collapse id="navbar" className="d-flex flex-row-reverse">
             <Nav className="ml-auto d-flex">
               {/* <Nav.Link as={Link} to='/'>
@@ -55,7 +54,7 @@ const AppNavbar = () => {
                   </div>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>🔐</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>🔐/✍🏻</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -76,9 +75,9 @@ const AppNavbar = () => {
                 <Nav.Item>
                   <Nav.Link eventKey="login">Login</Nav.Link>
                 </Nav.Item>
-                {/* <Nav.Item>
+                <Nav.Item>
                   <Nav.Link eventKey="signup">Sign Up</Nav.Link>
-                </Nav.Item> */}
+                </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
