@@ -16,6 +16,21 @@ body {
   line-height: 1.5;
 }
 
+html, body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* main content grows */
+main {
+  flex: 1;
+}
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -304,6 +319,53 @@ body {
 }
 
 /* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  width: 100%;
+  min-height: 70px;
+
+  display: flex;
+  justify-content: center;
+  /* left ↔ right */
+  align-items: center;
+
+  padding: 10px 25px;
+  margin-top: 40px;
+
+  background: linear-gradient(135deg, #ffb6c1, #add8e6);
+}
+
+/* LEFT TEXT */
+.footer-left h2 {
+  font-size: 14px;
+  margin: 0;
+  color: #0E5259;
+}
+
+/* RIGHT ICONS */
+.footer-right {
+  display: flex;
+  gap: 15px;
+  /* space between icons */
+}
+
+/* ICON STYLE */
+.icon {
+  font-size: 26px;
+  color: #0E5259;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.icon:hover {
+  color: #328C83;
+  transform: scale(1.2);
+}
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 @media (max-width: 900px) {
@@ -330,6 +392,11 @@ body {
   .header {
     padding: 40px 15px;
   }
+    footer {
+    flex-direction: column; /* stack vertically */
+    text-align: center;
+  }
+
 }
 
 /* =========================================================
