@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
+
 import { QUERY_ROOM_BY_CODE, QUERY_VOTES_BY_ROOM } from "../utils/queries";
 
 import {
@@ -10,6 +11,7 @@ import {
 } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import FunFact from "./props/FunFact";
 
 const AccessRoom = () => {
   // =========================
@@ -217,7 +219,19 @@ const AccessRoom = () => {
   return (
     <div className="access-room-container">
       {/* ROOM TITLE */}
-      <h2>{roomData?.roomByCode?.roomName}</h2>
+      <h1
+        style={{
+          textAlign: "center",
+          background: "linear-gradient(90deg, #c1c122,#1c6feb, #c1c122)",
+          padding: "10px",
+          borderRadius: "8px",
+          color: "#fafef3",
+        }}
+      >
+        {roomData?.roomByCode?.roomName}
+      </h1>
+
+      <FunFact />
 
       {/* VOTE PROGRESS BAR */}
       <div className="vote-percentage-bar">
@@ -289,7 +303,9 @@ const AccessRoom = () => {
       {showResult && actualResult && (
         <div className="actual-result">
           <h3>Actual Result:</h3>
-          <h1>{actualResult === "boy" ? "👦 IT'S A BOY!" : "👧 IT'S A GIRL!"}</h1>
+          <h1>
+            {actualResult === "boy" ? "👦 IT'S A BOY!" : "👧 IT'S A GIRL!"}
+          </h1>
         </div>
       )}
 
